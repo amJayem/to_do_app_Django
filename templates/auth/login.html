@@ -6,14 +6,12 @@
 {% endblock title %}
 
 {% block content %}
-<div class="container col-md-5 offset-3 mt-5">
+<div class="container col-md-4 offset-3 mt-5">
     <form action="" class="form-group" method="POST">
         {% csrf_token %}
-        <h2 class="text-center">Login Form</h2> <hr> <br>
-        <input type="text" class="form-control" name="username" placeholder="Enter your username">
-        <br>
-        <input type="password" class="form-control" name="password" placeholder="Enter your password">
-        <br>
+        <h2 class="text-center">Login Form</h2>     <hr> <br>
+        <input type="text" class="form-control" name="username" placeholder="Enter your username">        <br>
+        <input type="password" class="form-control" name="password" placeholder="Enter your password">        <br>
         <input type="submit" value="Login" class="btn btn-info w-100">
     </form>
 </div>

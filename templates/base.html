@@ -16,32 +16,44 @@
     </title>
 
   </head>
+
   <body>
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">To Do App</a>
+        <a class="navbar-brand" href="{% url 'home' %} ">To Do App</a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 
-        <ul class="navbar-nav ml-auto">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto  mb-lg-0">
+
+          </ul>
           
-          {% if user.is_authenticated %}  
-            <li class="nav-item">
-              <a class="nav-link" href=" {% url 'logout' %} ">Logout</a>
-            </li>
+          <ul class="navbar-nav ">
+            {% if user.is_authenticated %}
 
-          {% else %}
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'logout' %}">Logout</a>
+              </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href=" {% url 'login' %} ">Login</a>
-          </li>
+            {% else %}
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'login' %}">Login</a>
+              </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href=" {% url 'login' %} ">SignUp</a>
-          </li>
-          {% endif %}
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'login' %}">SignUp</a>
+              </li>
 
-        </ul>
-
+            {% endif %}
+          </ul>
+          
+        </div>
       </div>
     </nav>
       

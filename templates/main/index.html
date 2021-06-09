@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
     <div class="row mt-4">
         <div class="col">
@@ -14,23 +13,17 @@
 
     <div class="row mt-4">
         <div class="col">
-            <ul class="list-group">
-                
+            <ul class="list-group">                
                 {% for item in todo_items %}
-                    <li class="list-group-item">{{ item.text }} 
-                        <div class="float-right">
-                            <form action="delete_todo/{{ item.id}}/ " method="POST">
+                    <li class="list-group-item ">{{ item.text }} 
+                        <div class="d-flex justify-content-sm-end">
+                            <form action="delete_todo/{{ item.id}}/" method="POST">
                                 <button type="submit" class="btn btn-sm btn-danger ">Delete</button>
                             </form>
                         </div>
+                        
                     </li>
-                {% endfor %}                    
-                
-                <!-- <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-                <li class="list-group-item">A fourth item</li>
-                <li class="list-group-item">And a fifth one</li> -->
-                
+                {% endfor %}                
               </ul>
         </div>
     </div>
