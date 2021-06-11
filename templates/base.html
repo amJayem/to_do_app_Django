@@ -34,13 +34,16 @@
           </ul>
           
           <ul class="navbar-nav ">
+            
             {% if user.is_authenticated %}
 
               <li class="nav-item">
                 <a class="nav-link active" href="{% url 'logout' %}">Logout</a>
               </li>
 
-            {% else %}
+            
+
+              {% else %}
               <li class="nav-item">
                 <a class="nav-link active" href="{% url 'login' %}">Login</a>
               </li>
@@ -50,7 +53,7 @@
                 <a class="nav-link active" href="{% url 'login' %}">SignUp</a>
               </li>
 
-            {% endif %}
+            {% endif %}            
           </ul>
           
         </div>
