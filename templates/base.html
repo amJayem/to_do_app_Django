@@ -36,7 +36,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href=" {% url 'login' %} ">SignUp</a>
+            <a class="nav-link" href=" {% url 'register' %} ">SignUp</a>
           </li>
           {% endif %}
 
@@ -46,6 +46,14 @@
     </nav>
       
     <div class="container">
+
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+          </div>          
+        {% endfor %}
+      {% endif %}
         
       {% block content %}
           
